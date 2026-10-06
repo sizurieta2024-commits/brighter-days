@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Brighter Days Painting | Interior &amp; Exterior House Painting in South &amp; Middle Georgia</title>
+<meta name="description" content="Brighter Days: interior and exterior house painting in Douglas, Valdosta, Waycross, Warner Robins and Byron, GA. Free estimates. Call 478-371-6141.">
+<meta name="theme-color" content="#2b1d3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HousePainter",
+  "name": "Brighter Days",
+  "telephone": "+1-478-371-6141",
+  "email": "anthony.tucker157@gmail.com",
+  "areaServed": ["Douglas, GA", "Valdosta, GA", "Waycross, GA", "Warner Robins, GA", "Byron, GA"]
+}
+</script>
+<style>
+  :root {
+    --night: oklch(0.24 0.06 300);
+    --night-2: oklch(0.31 0.07 300);
+    --dawn: oklch(0.72 0.17 45);
+    --sun: oklch(0.86 0.15 80);
+    --blush: oklch(0.86 0.06 30);
+    --paper: oklch(0.975 0.012 80);
+    --paper-2: oklch(0.94 0.02 75);
+    --ink: oklch(0.24 0.04 300);
+    --ink-soft: oklch(0.45 0.035 300);
+    --rule: oklch(0.86 0.02 70);
+    --display: "Fraunces", Georgia, serif;
+    --body: "Figtree", "Helvetica Neue", Arial, sans-serif;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --gutter: clamp(18px, 4vw, 40px);
+    --wall: oklch(0.9 0.04 85);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { margin: 0; font: 17px/1.6 var(--body); color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  svg { display: block; max-width: 100%; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding-inline: var(--gutter); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; letter-spacing: -0.02em; margin: 0; }
+  .kicker { font-weight: 700; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dawn); margin: 0 0 12px; }
+  :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+  .ribbon { background: var(--sun); color: var(--night); font-size: 13px; font-weight: 600; text-align: center; padding: 6px 12px; }
+
+  .bar { position: sticky; top: 0; z-index: 30; background: color-mix(in oklch, var(--night) 94%, transparent); backdrop-filter: blur(8px); color: var(--paper); }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-block: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand svg { width: 40px; height: 40px; }
+  .brand b { font-family: var(--display); font-size: 20px; letter-spacing: -0.01em; display: block; line-height: 1; }
+  .brand small { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sun); font-weight: 600; }
+  .bar nav { display: none; gap: 26px; font-weight: 600; font-size: 15px; }
+  .bar nav a { text-decoration: none; opacity: 0.85; }
+  .bar nav a:hover { opacity: 1; color: var(--sun); }
+  @media (min-width: 900px) { .bar nav { display: flex; } }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 700 16px/1 var(--body); text-decoration: none; padding: 15px 22px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform 0.25s var(--ease), background-color 0.2s, box-shadow 0.25s var(--ease); }
+  .btn:active { transform: translateY(1px); }
+  .btn-sun { background: var(--sun); color: var(--night); box-shadow: 0 6px 20px -8px oklch(0.86 0.15 80 / 0.8); }
+  .btn-sun:hover { transform: translateY(-2px); }
+  .btn-ghost { border-color: color-mix(in oklch, var(--paper) 60%, transparent); color: var(--paper); }
+  .btn-ghost:hover { background: color-mix(in oklch, var(--paper) 12%, transparent); }
+  .bar .btn { padding: 10px 16px; font-size: 15px; white-space: nowrap; }
+  .bar .btn .long { display: none; }
+  @media (min-width: 520px) { .bar .btn .long { display: inline; } }
+  @media (max-width: 519px) { .brand small { display: none; } }
+
+  /* Hero: night sky fading into dawn */
+  .hero { position: relative; overflow: hidden; color: var(--paper);
+    background: linear-gradient(180deg, var(--night) 0%, var(--night-2) 38%, oklch(0.5 0.13 20) 74%, var(--dawn) 100%); }
+  .hero .sunrise { position: absolute; left: 50%; bottom: -46vmin; width: 92vmin; height: 92vmin; translate: -50% 0; border-radius: 50%;
+    background: radial-gradient(circle, var(--sun) 0 38%, color-mix(in oklch, var(--sun) 40%, transparent) 52%, transparent 70%); animation: rise 2.4s var(--ease) both; }
+  @keyframes rise { from { translate: -50% 18%; opacity: 0.4; } to { translate: -50% 0; opacity: 1; } }
+  .hero .wrap { position: relative; display: grid; gap: 34px; padding-block: clamp(48px, 8vw, 96px) clamp(120px, 16vw, 190px); text-align: center; justify-items: center; }
+  .hero h1 { font-size: clamp(42px, 8.5vw, 92px); max-width: 12ch; }
+  .hero h1 em { font-style: italic; color: var(--sun); }
+  .hero p.sub { font-size: clamp(17px, 2vw, 21px); max-width: 34em; margin: 0; color: color-mix(in oklch, var(--paper) 86%, var(--night)); }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .chips li { font-size: 14px; font-weight: 600; padding: 7px 13px; border-radius: 999px; background: color-mix(in oklch, var(--paper) 14%, transparent); border: 1px solid color-mix(in oklch, var(--paper) 25%, transparent); }
+
+  section { padding-block: clamp(60px, 8vw, 104px); }
+  .head { max-width: 680px; margin-bottom: clamp(28px, 4vw, 46px); }
+  .head h2 { font-size: clamp(34px, 5vw, 56px); }
+  .head p { color: var(--ink-soft); font-size: 18px; margin: 14px 0 0; }
+
+  /* Room recolor */
+  .studio { display: grid; gap: clamp(26px, 4vw, 52px); align-items: center; }
+  @media (min-width: 940px) { .studio { grid-template-columns: 1.15fr 0.85fr; } }
+  .room { border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -30px oklch(0.24 0.06 300 / 0.55); background: var(--paper-2); }
+  .room .wall { fill: var(--wall); transition: fill 0.7s var(--ease); }
+  .room .wall-shade { fill: color-mix(in oklch, var(--wall) 82%, black); transition: fill 0.7s var(--ease); }
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px 0 18px; }
+  .sw { border: 0; padding: 0; background: none; cursor: pointer; text-align: left; font: 600 14px var(--body); color: var(--ink); }
+  .sw span { display: block; aspect-ratio: 5 / 3; border-radius: 10px; margin-bottom: 7px; box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.08); transition: transform 0.3s var(--ease), box-shadow 0.3s; }
+  .sw:hover span { transform: translateY(-3px); }
+  .sw[aria-pressed="true"] span { box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--ink); }
+  .studio-note { color: var(--ink-soft); font-size: 15px; margin: 0; }
+
+  /* Services */
+  .services { background: var(--paper-2); }
+  .svc { display: grid; gap: 18px; }
+  @media (min-width: 760px) { .svc { grid-template-columns: repeat(2, 1fr); } }
+  .card { background: var(--paper); border-radius: 16px; padding: 26px 26px 24px; position: relative; overflow: hidden; border: 1px solid var(--rule); }
+  .card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; background: var(--c, var(--dawn)); }
+  .card h3 { font-size: 26px; margin-bottom: 8px; }
+  .card p { margin: 0; color: var(--ink-soft); }
+  .card ul { margin: 14px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+  .card li { font-size: 13.5px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: var(--paper-2); }
+
+  /* Process */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: s; }
+  @media (min-width: 820px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .steps li { counter-increment: s; padding-top: 18px; border-top: 3px solid var(--ink); }
+  .steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--display); font-size: 46px; color: var(--dawn); display: block; line-height: 1; margin-bottom: 10px; }
+  .steps h3 { font-size: 23px; margin-bottom: 6px; }
+  .steps p { margin: 0; color: var(--ink-soft); }
+
+  /* Story */
+  .story { background: var(--night); color: var(--paper); }
+  .story .wrap { display: grid; gap: 30px; }
+  @media (min-width: 900px) { .story .wrap { grid-template-columns: 1fr 1fr; align-items: center; } }
+  .story blockquote { margin: 0; font-family: var(--display); font-size: clamp(28px, 4vw, 44px); line-height: 1.12; font-weight: 600; }
+  .story blockquote em { color: var(--sun); font-style: italic; }
+  .story p { color: color-mix(in oklch, var(--paper) 82%, var(--night)); margin: 0 0 14px; }
+  .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+  .shot { aspect-ratio: 4 / 5; border-radius: 12px; display: grid; place-items: center; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; color: color-mix(in oklch, var(--paper) 70%, var(--night));
+    background: repeating-linear-gradient(135deg, var(--night-2) 0 12px, color-mix(in oklch, var(--night-2) 80%, var(--dawn)) 12px 24px); }
+
+  /* Areas */
+  .areas ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .areas li { padding: 12px 18px; border-radius: 999px; border: 2px solid var(--ink); font-weight: 700; }
+
+  /* Estimate */
+  .estimate { background: linear-gradient(180deg, var(--paper) 0%, var(--blush) 100%); }
+  .est { display: grid; gap: clamp(28px, 4vw, 56px); }
+  @media (min-width: 900px) { .est { grid-template-columns: 0.9fr 1.1fr; align-items: start; } }
+  .phone { font-family: var(--display); font-size: clamp(36px, 5vw, 54px); text-decoration: none; color: var(--ink); display: inline-block; margin-top: 10px; }
+  .phone:hover { color: var(--dawn); }
+  form { background: var(--paper); border-radius: 18px; padding: clamp(20px, 3vw, 30px); display: grid; gap: 16px; box-shadow: 0 30px 60px -34px oklch(0.24 0.06 300 / 0.6); }
+  label, legend { font-weight: 700; font-size: 14px; }
+  label { display: grid; gap: 6px; }
+  input, textarea { font: 500 16px var(--body); padding: 13px 14px; border: 2px solid var(--rule); border-radius: 10px; background: oklch(0.99 0.005 80); color: var(--ink); width: 100%; }
+  input:focus, textarea:focus { outline: none; border-color: var(--dawn); }
+  input[aria-invalid="true"] { border-color: oklch(0.55 0.2 27); }
+  textarea { min-height: 96px; resize: vertical; }
+  fieldset { border: 0; margin: 0; padding: 0; }
+  legend { margin-bottom: 8px; padding: 0; }
+  .picks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pick { font: 600 14px var(--body); padding: 10px 14px; border-radius: 999px; border: 2px solid var(--rule); background: transparent; cursor: pointer; color: var(--ink); }
+  .pick[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  form .btn { width: 100%; background: var(--ink); color: var(--paper); }
+  form .btn:hover { background: var(--dawn); color: var(--night); }
+  .note { margin: 0; min-height: 22px; font-weight: 700; font-size: 14.5px; color: var(--dawn); }
+  .note.err { color: oklch(0.5 0.2 27); }
+
+  footer { background: var(--night); color: color-mix(in oklch, var(--paper) 72%, var(--night)); padding: 30px 0 96px; font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer a { color: var(--sun); font-weight: 700; text-decoration: none; }
+  .callbar { position: fixed; inset: auto 0 0 0; z-index: 40; display: grid; grid-template-columns: 1fr 1fr; }
+  .callbar a { padding: 16px; text-align: center; font-weight: 700; text-decoration: none; }
+  .callbar .a { background: var(--sun); color: var(--night); }
+  .callbar .b { background: var(--ink); color: var(--paper); }
+  @media (min-width: 900px) { .callbar { display: none; } footer { padding-bottom: 30px; } }
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .hero .sunrise { animation: none; } .js .reveal { opacity: 1; transform: none; transition: none; } .room .wall, .room .wall-shade { transition: none; } }
+</style>
+</head>
+<body>
+<div class="ribbon">Preview for Anthony. Every word, color and photo can be changed.</div>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Brighter Days, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="26" r="11" fill="oklch(0.86 0.15 80)"/>
+        <path d="M2 27h36" stroke="oklch(0.975 0.012 80)" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M20 7v5M8 13l3 3M32 13l-3 3" stroke="oklch(0.86 0.15 80)" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="2" y="27" width="36" height="13" fill="oklch(0.24 0.06 300)"/>
+      </svg>
+      <span><b>Brighter Days</b><small>House Painting · GA</small></span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#colors">Try a color</a>
+      <a href="#services">Services</a>
+      <a href="#areas">Areas</a>
+      <a href="#estimate">Free estimate</a>
+    </nav>
+    <a class="btn btn-sun" href="tel:+14783716141">Call<span class="long"> 478-371-6141</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="sunrise" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="kicker" style="color:var(--sun)">Interior &amp; exterior painting</p>
+      <h1>Same space, <em>whole new feeling.</em></h1>
+      <p class="sub">Brighter Days is a local painting business run by Anthony, a painter with years of hands-on experience. Clean lines, careful prep, and a free estimate before any work starts.</p>
+      <div class="actions">
+        <a class="btn btn-sun" href="#estimate">Get a free estimate</a>
+        <a class="btn btn-ghost" href="#colors">Try a color on a room</a>
+      </div>
+      <ul class="chips" aria-label="Areas served">
+        <li>Douglas</li><li>Valdosta</li><li>Waycross</li><li>Warner Robins</li><li>Byron</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="colors">
+    <div class="wrap studio">
+      <figure class="room reveal" style="margin:0">
+        <svg viewBox="0 0 640 420" role="img" aria-label="Illustration of a living room whose wall color changes with the selected swatch">
+          <rect class="wall" x="0" y="0" width="640" height="320"/>
+          <rect class="wall-shade" x="0" y="0" width="640" height="18"/>
+          <rect x="0" y="300" width="640" height="20" fill="oklch(0.97 0.01 80)"/>
+          <rect x="0" y="320" width="640" height="100" fill="oklch(0.62 0.07 60)"/>
+          <path d="M0 340h640M0 362h640M0 386h640" stroke="oklch(0.55 0.07 60)" stroke-width="2"/>
+          <!-- window -->
+          <rect x="70" y="60" width="150" height="170" rx="4" fill="oklch(0.88 0.06 230)" stroke="oklch(0.97 0.01 80)" stroke-width="10"/>
+          <path d="M145 60v170M70 145h150" stroke="oklch(0.97 0.01 80)" stroke-width="6"/>
+          <circle cx="190" cy="92" r="16" fill="oklch(0.9 0.12 85)"/>
+          <!-- art -->
+          <rect x="300" y="78" width="110" height="80" rx="3" fill="oklch(0.97 0.01 80)" stroke="oklch(0.3 0.04 300)" stroke-width="4"/>
+          <path d="M310 146l28-34 22 22 16-14 24 26z" fill="oklch(0.72 0.17 45)"/>
+          <!-- sofa -->
+          <rect x="270" y="210" width="280" height="80" rx="18" fill="oklch(0.36 0.06 300)"/>
+          <rect x="250" y="226" width="40" height="76" rx="14" fill="oklch(0.31 0.06 300)"/>
+          <rect x="530" y="226" width="40" height="76" rx="14" fill="oklch(0.31 0.06 300)"/>
+          <rect x="290" y="186" width="120" height="50" rx="14" fill="oklch(0.42 0.07 300)"/>
+          <rect x="414" y="186" width="120" height="50" rx="14" fill="oklch(0.42 0.07 300)"/>
+          <rect x="268" y="300" width="10" height="20" fill="oklch(0.25 0.04 300)"/><rect x="542" y="300" width="10" height="20" fill="oklch(0.25 0.04 300)"/>
+          <!-- plant -->
+          <rect x="586" y="258" width="34" height="42" rx="4" fill="oklch(0.72 0.17 45)"/>
+          <path d="M603 258c-20-40-6-70 0-80 6 10 20 40 0 80zM603 258c-34-18-36-44-34-52 10 4 34 18 34 52zM603 258c34-18 36-44 34-52-10 4-34 18-34 52z" fill="oklch(0.55 0.12 150)"/>
+          <!-- roller -->
+          <g transform="translate(40 250) rotate(-8)">
+            <rect x="0" y="0" width="70" height="22" rx="10" fill="var(--wall)" stroke="oklch(0.3 0.04 300)" stroke-width="3" class="wall"/>
+            <path d="M70 11h14v40" stroke="oklch(0.3 0.04 300)" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <rect x="78" y="48" width="12" height="40" rx="5" fill="oklch(0.72 0.17 45)"/>
+          </g>
+        </svg>
+      </figure>
+      <div class="reveal">
+        <p class="kicker">Try a color</p>
+        <h2 style="font-size:clamp(32px,4.4vw,50px)">See the room change before a single brush stroke.</h2>
+        <div class="swatches" role="group" aria-label="Wall colors">
+          <button class="sw" type="button" data-c="oklch(0.9 0.04 85)" aria-pressed="true"><span style="background:oklch(0.9 0.04 85)"></span>Warm white</button>
+          <button class="sw" type="button" data-c="oklch(0.83 0.06 140)" aria-pressed="false"><span style="background:oklch(0.83 0.06 140)"></span>Sage</button>
+          <button class="sw" type="button" data-c="oklch(0.8 0.06 235)" aria-pressed="false"><span style="background:oklch(0.8 0.06 235)"></span>Sky blue</button>
+          <button class="sw" type="button" data-c="oklch(0.84 0.08 60)" aria-pressed="false"><span style="background:oklch(0.84 0.08 60)"></span>Sunrise peach</button>
+          <button class="sw" type="button" data-c="oklch(0.7 0.03 260)" aria-pressed="false"><span style="background:oklch(0.7 0.03 260)"></span>Storm gray</button>
+          <button class="sw" type="button" data-c="oklch(0.42 0.07 255)" aria-pressed="false"><span style="background:oklch(0.42 0.07 255)"></span>Deep navy</button>
+        </div>
+        <p class="studio-note" id="sw-note" aria-live="polite">Warm white: clean and bright. Not sure what fits your home? Anthony can bring real samples to your free estimate.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="kicker">What we paint</p>
+        <h2>Inside and out.</h2>
+        <p>From one bedroom to the whole house, every job starts with careful prep so the finish lasts.</p>
+      </div>
+      <div class="svc">
+        <article class="card reveal" style="--c:oklch(0.72 0.17 45)"><h3>Interior painting</h3><p>Walls, ceilings and full rooms with clean cut lines and furniture protected.</p><ul><li>Living rooms</li><li>Bedrooms</li><li>Kitchens</li><li>Ceilings</li></ul></article>
+        <article class="card reveal" style="--c:oklch(0.55 0.12 150)"><h3>Exterior painting</h3><p>Siding, trim and porches painted to stand up to Georgia sun and humidity.</p><ul><li>Siding</li><li>Trim &amp; fascia</li><li>Porches</li><li>Fences</li></ul></article>
+        <article class="card reveal" style="--c:oklch(0.86 0.15 80)"><h3>Trim, doors &amp; accents</h3><p>The details that make a space look finished: doors, baseboards and accent walls.</p><ul><li>Doors</li><li>Baseboards</li><li>Accent walls</li></ul></article>
+        <article class="card reveal" style="--c:oklch(0.42 0.07 255)"><h3>Prep &amp; repairs</h3><p>Patching, caulking and sanding before paint, so the result looks smooth, not rushed.</p><ul><li>Drywall patches</li><li>Caulking</li><li>Sanding</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="kicker">How it works</p>
+        <h2>Simple from the first call.</h2>
+      </div>
+      <ol class="steps reveal">
+        <li><h3>Tell us about the job</h3><p>Call, text or send the form. A couple of photos help price it right.</p></li>
+        <li><h3>Free estimate</h3><p>A clear price before any work starts. No charge for the estimate.</p></li>
+        <li><h3>Brighter days</h3><p>We prep, paint and clean up, and you walk into a space that feels new.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <div class="reveal">
+        <blockquote>Every home gets <em>the care you'd want for your own.</em></blockquote>
+      </div>
+      <div class="reveal">
+        <p>Anthony spent years painting for others before starting his own business. Now every job gets his full attention, from the first walkthrough to the last touch-up.</p>
+        <div class="shots">
+          <div class="shot">Before photo goes here</div>
+          <div class="shot">After photo goes here</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas" class="areas">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="kicker">Service areas</p>
+        <h2>South &amp; Middle Georgia.</h2>
+        <p>Not sure if we come to you? Call and ask.</p>
+      </div>
+      <ul class="reveal">
+        <li>Douglas</li><li>Valdosta</li><li>Waycross</li><li>Warner Robins</li><li>Byron</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="estimate" class="estimate">
+    <div class="wrap est">
+      <div class="reveal">
+        <p class="kicker">Free estimate</p>
+        <h2 style="font-size:clamp(36px,5vw,58px)">Ready for a fresh coat?</h2>
+        <p style="color:var(--ink-soft);font-size:18px;margin:14px 0 0">Call or text Anthony, or send the form and it goes straight to his phone.</p>
+        <a class="phone" href="tel:+14783716141">478-371-6141</a>
+      </div>
+      <form id="est" class="reveal" novalidate>
+        <fieldset>
+          <legend>What needs painting?</legend>
+          <div class="picks" id="picks"></div>
+        </fieldset>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Phone number<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required></label>
+        <label>About the job (optional)<textarea name="details" placeholder="Town, rooms or areas, timing"></textarea></label>
+        <button class="btn" type="submit">Text my free estimate request</button>
+        <p class="note" id="note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b style="color:var(--paper)">Brighter Days</b> · Interior &amp; exterior painting · South &amp; Middle Georgia</span>
+    <a href="tel:+14783716141">478-371-6141</a>
+  </div>
+</footer>
+<div class="callbar"><a class="a" href="tel:+14783716141">Call</a><a class="b" href="#estimate">Free estimate</a></div>
+
+<script>
+  document.documentElement.classList.add('js');
+  const NOTES = {
+    'Warm white': 'clean and bright.', 'Sage': 'calm and natural.', 'Sky blue': 'light and airy.',
+    'Sunrise peach': 'warm and welcoming.', 'Storm gray': 'modern and easy to live with.', 'Deep navy': 'bold and cozy.',
+  };
+  document.querySelectorAll('.sw').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.sw').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.documentElement.style.setProperty('--wall', b.dataset.c);
+    const name = b.textContent.trim();
+    document.getElementById('sw-note').textContent = `${name}: ${NOTES[name]} Not sure what fits your home? Anthony can bring real samples to your free estimate.`;
+  }));
+
+  const JOBS = ['Interior', 'Exterior', 'Trim & doors', 'Cabinets', 'Prep & repairs'];
+  let picked = new Set();
+  const picksEl = document.getElementById('picks');
+  picksEl.innerHTML = JOBS.map((j) => `<button class="pick" type="button" aria-pressed="false">${j}</button>`).join('');
+  picksEl.addEventListener('click', (e) => {
+    const b = e.target.closest('.pick'); if (!b) return;
+    const next = new Set(picked); const j = b.textContent;
+    if (next.has(j)) next.delete(j); else next.add(j);
+    picked = next; b.setAttribute('aria-pressed', String(picked.has(j)));
+  });
+
+  // Preview: on the live site this opens a text to Anthony with the request filled in.
+  const form = document.getElementById('est'); const note = document.getElementById('note');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(form);
+    const missing = ['name', 'phone'].filter((k) => !String(d.get(k) || '').trim());
+    ['name', 'phone'].forEach((k) => form.elements[k].setAttribute('aria-invalid', String(missing.includes(k))));
+    note.classList.toggle('err', missing.length > 0);
+    if (missing.length) { note.textContent = 'Please add your name and phone number so Anthony can call you back.'; form.elements[missing[0]].focus(); return; }
+    note.textContent = `Preview only: on the live site this opens a text to Anthony with your request${picked.size ? ` (${[...picked].join(', ')})` : ''}.`;
+  });
+
+  const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+</body>
+</html>
